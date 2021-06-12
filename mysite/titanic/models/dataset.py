@@ -8,9 +8,9 @@ class Dataset(object):
     train: object # train.csv 가 DF 로 전환된 객체
     test: object # test.csv 가 DF 로 전환된 객체
     id: str # 승객ID 로 문제가 된다.
-    label: str # 승객ID에 따른 생존여부로 답이 된다.
+    label: str # 승객ID 에 따른 생존여부로 답이 된다.
 
-    # 데이터를 읽고(getter)/쓰기(setter) 기능을 추가한다.
+    # 데이터를 읽고(getter = 프로퍼티) / 쓰기(setter) 기능을 추가한다.
 
     @property
     def context(self) -> str: return self._context
@@ -21,29 +21,29 @@ class Dataset(object):
     @property
     def fname(self) -> str: return self._fname
 
-    @context.setter
+    @fname.setter
     def fname(self, fname): self._fname = fname
 
     @property
     def train(self) -> str: return self._train
 
-    @context.setter
+    @train.setter
     def train(self, train): self._train = train
 
     @property
     def test(self) -> str: return self._test
 
-    @context.setter
+    @test.setter
     def test(self, test): self._test = test
 
     @property
     def id(self) -> str: return self._id
 
-    @context.setter
+    @id.setter
     def id(self, id): self._id = id
 
     @property
     def label(self) -> str: return self._label
 
-    @context.setter
+    @label.setter
     def label(self, label): self._label = label
